@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Kanit:wght@500&family=Rubik&family=Ubuntu:wght@500&display=swap');
+
+body {
+  font-family: 'Courgette', cursive;
+  font-family: 'Kanit', sans-serif;
+  margin: 0; 
+  padding: 0; 
+}
+
+.div {
+  font-family: 'Courgette', cursive;
+  font-family: 'Kanit', sans-serif;
+}
+
+.div2 {
+    font-family: 'Courgette', cursive;
+  font-family: 'Kanit', sans-serif;
+  
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; 
+}
+
+.div {
+  align-self: flex-start; 
+}
+
+.div2 {
+  align-self: flex-end; 
+}
+.home , .about , .english , .communicate {
+    text-decoration: none;
+    
+}
+.about , .english , .communicate {
+    padding:4px;
+}
+nav {
+   background-color:rgb(120, 228, 96) ;
+}

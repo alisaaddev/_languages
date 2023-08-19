@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start</title>
+    <style>
+        body {
+            font-family: 'Courgette', cursive;
+            font-family: 'Kanit', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Rubik', sans-serif;
+            font-family: 'Ubuntu', sans-serif;
+            background-color: aquamarine;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Vertically align content */
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            height: 100vh;
+        }
+        h1 {
+            color: rgb(98, 16, 118);
+        }
+        .languages {
+            display: flex;
+            flex-direction: column; /* Place items vertically */
+            align-items: center;
+            justify-content: flex-start; /* Align items to the top */
+            margin-top: 20px; /* Add some spacing between h1 and the languages */
+        }
+        
+        .english {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: start;
+        }
+        
+        .english p {
+            margin: 0;
+            color: rgb(73, 26, 229);
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        a button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Button border radius */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s;
+    text-decoration: none; /* Remove underline on links */
+    display: inline-block; /* Ensure button respects width and height properties */
+    position: absolute; /* Position the button absolutely */
+    bottom: 10px; /* Distance from the bottom */
+    left: 10px; /* Distance from the left */
+}
+
+/* Hover effect */
+a button:hover {
+    background-color: #0056b3;
+}
+
+/* Add margin to the button */
+a button {
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <h1>Choose your language</h1>
+    <div class="languages">
+        <a href="english_page.html" class="english" >
+            <p>English</p>
+        </a>
+    </div>
+    <div class="languages">
+        <a href="english_page.html" class="english" >
+            <p>French</p>
+        </a>
+    </div>
+    <div class="languages">
+        <a href="english_page.html" class="english" >
+            <p>Spanish</p>
+        </a>
+    </div>
+    <div class="languages">
+        <a href="english_page.html" class="english" >
+            <p>Turkish</p>
+        </a>
+    </div>
+    <div class="languages">
+        <a href="english_page.html" class="english" >
+            <p>other....</p>
+        </a>
+    </div>
+    <a href="home.php"><button>back to home ↺</button></a>
+    
+</body>
+</html>

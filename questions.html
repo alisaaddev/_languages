@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kanit:wght@500&family=Open+Sans:wght@500&family=Roboto&family=Rubik&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <style>
+        body {
+            font-family: 'Courgette', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #887777; /* Light gray background */
+            font-family: 'Courgette', cursive;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 50%;
+            margin-top: 10%;
+        }
+
+        h1 {
+            color: #333;
+            
+            font-size: 24px;
+        }
+
+        .squares {
+            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff; /* White squares */
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .square a {
+            text-decoration: none;
+            color: rgb(222, 18, 18);
+            font-weight: bold;
+        }
+
+        .dislike {
+            display: none;
+            position: absolute;
+            font-size: 24px;
+            color: red;
+            animation-name: fall;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            top: 0; /* Initially, set the top position to 0 */
+        }
+
+        @keyframes fall {
+            0% {
+                top: 0;
+            }
+            100% {
+                top: calc(100vh - 50px); /* Adjust the value for the final position */
+            }
+        }
+
+        button {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>red is a ____</h1>
+        <div class="squares">
+            <button class="square" onclick="handleClick(this)"><a >juice</a></button>
+            <button class="square correct" id="filego" onclick="handleClick(this)"><a >color</a></button>
+            <button class="square" onclick="handleClick(this)"><a >food</a></button>
+            <button class="square" onclick="handleClick(this)"><a >character</a></button>
+        </div>
+        <div class="dislike" id="dislike">👎🏿</div>
+    </header>
+
+    <script>
+        function handleClick(element) {
+            // Remove the "clicked" class from all buttons
+            const buttons = document.querySelectorAll('.square');
+            buttons.forEach((button) => {
+                button.classList.remove('clicked');
+            });
+
+            // Add the "clicked" class to the clicked button
+            element.classList.add('clicked');
+
+            // Check if the clicked button is the correct answer (second button)
+            if (element.classList.contains('correct')) {
+                // Display "Correct Answer" text
+                document.getElementById('answer-text').textContent = 'Correct Answer';
+
+                // Change the body background color to green
+                document.body.style.backgroundColor = '#00cc66'; /* Light green color */
+
+              
+
+                document.body.appendChild(videoElement);
+            } else {
+                // Display "Wrong Answer" text for the first, third, and fourth buttons
+                if (element === buttons[0] || element === buttons[2] || element === buttons[3]) {
+                    document.getElementById('answer-text').textContent = 'Wrong Answer';
+
+                    // Show the dislike emoji and start the falling animation
+                    const dislikeEmoji = document.getElementById('dislike');
+                    dislikeEmoji.style.top = '0'; // Reset the top position
+                    dislikeEmoji.style.display = 'block';
+
+                    // Reset the body background color to the default
+                    document.body.style.backgroundColor = '#887777'; /* Light gray background */
+
+                    // Hide the dislike emoji after a delay (0.5 seconds)
+                    setTimeout(() => {
+                        dislikeEmoji.style.display = 'none';
+                    }, 950);
+                }
+            }
+        }
+        function handleCorrectClick(element) {
+            // Add the "clicked" class to the clicked button
+            element.classList.add('clicked');
+
+            // Wait for 1 second, then navigate to the specific file
+            setTimeout(() => {
+                window.location.href = 'specific-file.html'; // Replace 'specific-file.html' with your desired file
+            }, 1000); // 1 second delay
+        }
+        const filego = document.getElementById('filego');
+        filego.onclick = function () {
+            window.location.href = 'q2.html';
+        };
+    </script>
+    <p id="answer-text"></p>
+</body>
+</html>
